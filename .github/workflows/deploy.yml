@@ -85,13 +85,18 @@ jobs:
         run: npm ci
       - name: Install and Build 🔧
         run: |
-          set -e
           sudo apt-get update && sudo apt-get install -y imagemagick || true
-          pip3 install --upgrade jupyter nbconvert
+          python3 -m pip install --upgrade --break-system-packages jupyter nbconvert || pip3 install --upgrade jupyter nbconvert || true
           export JEKYLL_ENV=production
           export LANG=en_US.UTF-8
           export LC_ALL=en_US.UTF-8
-          bundle exec jekyll build --trace -d _site
+          if ! bundle exec jekyll build --trace -d _site > /tmp/jekyll.log 2>&1; then
+            cat /tmp/jekyll.log
+            ERROR_SNIPPET=$(tail -n 20 /tmp/jekyll.log | tr '\r\n' ' ' | sed 's/"//g')
+            echo "::error title=Build Failure::$ERROR_SNIPPET"
+            exit 1
+          fi
+          cat /tmp/jekyll.log | tail -n 25
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss
