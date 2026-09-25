@@ -30,7 +30,6 @@ cv:
         position: AI & High-Performance Computing Engineer
         location: Mumbai, India
         start_date: 2024
-        end_date: present
         summary: Developing high-throughput deep learning inference engines, gigapixel digital pathology pipelines, and GPU acceleration frameworks.
         highlights:
           - Accelerated deep neural network inference by up to 4.2x using NVIDIA TensorRT and Automatic Mixed Precision (AMP).
