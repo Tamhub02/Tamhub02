@@ -93,10 +93,12 @@ jobs:
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
+          sudo apt-get update && sudo apt-get install -y imagemagick || true
+          pip3 install --upgrade nbconvert --break-system-packages || pip install --upgrade nbconvert || true
           export JEKYLL_ENV=production
-          bundle exec jekyll build
+          export LANG=en_US.UTF-8
+          export LC_ALL=en_US.UTF-8
+          bundle exec jekyll build --trace
       - name: Purge unused CSS 🧹
         run: |
           npm install -g purgecss

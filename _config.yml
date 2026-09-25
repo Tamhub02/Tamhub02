@@ -9,7 +9,7 @@ last_name: Mondal
 contact_note: >
   Feel free to reach out via email or connect on GitHub.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal portfolio and website of Tamajit Mondal — AI & High-Performance Computing Engineer specializing in Deep Learning, TensorRT acceleration, and Digital Pathology.
+  Personal portfolio and website of Tamajit Mondal - AI & High-Performance Computing Engineer specializing in Deep Learning, TensorRT acceleration, and Digital Pathology.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -19,7 +19,7 @@ icon: ⚡ # the emoji used as the favicon (alternatively, provide image name in 
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://tamhub02.github.io # the base hostname & protocol for your site
-baseurl: /Tamhub02 # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: /Tamhub02/ # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -443,7 +443,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
     - 480
     - 800
