@@ -92,8 +92,10 @@ jobs:
           export LC_ALL=en_US.UTF-8
           if ! bundle exec jekyll build --trace -d _site > /tmp/jekyll.log 2>&1; then
             cat /tmp/jekyll.log
-            ERROR_SNIPPET=$(tail -n 20 /tmp/jekyll.log | tr '\r\n' ' ' | sed 's/"//g')
-            echo "::error title=Build Failure::$ERROR_SNIPPET"
+            ERROR_LINE=$(grep -E "(Error:|Exception:)" /tmp/jekyll.log | head -n 3 | tr '\r\n' ' ' | sed 's/"//g')
+            echo "::error title=Jekyll Error::$ERROR_LINE"
+            ERROR_CTX=$(grep -B 1 -A 5 -E "(Error:|Exception:)" /tmp/jekyll.log | head -n 8 | tr '\r\n' ' ' | sed 's/"//g')
+            echo "::error title=Error Context::$ERROR_CTX"
             exit 1
           fi
           cat /tmp/jekyll.log | tail -n 25
