@@ -9,11 +9,11 @@ last_name: Mondal
 contact_note: >
   Feel free to reach out via email or connect on GitHub.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal portfolio and website of Tamajit Mondal - AI & High-Performance Computing Engineer specializing in Deep Learning, TensorRT acceleration, and Digital Pathology.
+  Personal portfolio and website of Tamajit Mondal - AI Engineer at Airamatrix specializing in Deep Learning, Computational Pathology (WSI), Vision-Language Models (VLM), and Computer Vision.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: Tamajit Mondal, AI Engineer, HPC, TensorRT, CUDA, Deep Learning, Digital Pathology, Whole Slide Imaging, Computer Vision, PyTorch, Docker
+keywords: Tamajit Mondal, AI Engineer, Airamatrix, Deep Learning, Digital Pathology, Whole Slide Imaging, WSI, ConvNeXt, UNet, Vision-Language Models, VLM, Qwen2.5-VL, MMDetection, PyTorch, Computer Vision
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚡ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.

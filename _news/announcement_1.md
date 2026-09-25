@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Achieved 4.2x inference speedup on digital pathology Whole Slide Imaging (WSI) pipelines utilizing NVIDIA TensorRT & Automatic Mixed Precision (AMP)!
+Achieved **0.8003 Validation Dice score** on multi-class histopathology defect segmentation using ConvNeXt-Tiny + UNet with Log-Smoothed Focal-Dice loss!

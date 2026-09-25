@@ -1,8 +1,8 @@
 ---
 layout: page
-title: TensorRT & AMP Low-Latency Accelerator
-description: Deep learning model compilation, latency benchmarking, and mixed precision optimization
-img: assets/img/7.jpg
+title: High-Throughput WSI Streaming & Reconstruction Engine
+description: Asynchronous multi-threaded gigapixel tile loader, coordinate mapping, and non-rigid stitcher processing 50GB+ pyramidal TIFF/SVS slides
+img: assets/img/12.jpg
 importance: 2
 category: work
 related_publications: false
@@ -10,14 +10,24 @@ related_publications: false
 
 ## Overview
 
-High-throughput medical AI workloads require sub-10ms inference latencies to enable real-time interactive pathologist workflows.
+Whole Slide Images (WSIs) in digital pathology frequently exceed **50 gigabytes** per pyramidal TIFF or Aperio SVS file, with gigapixel canvases comprising billions of pixels. Conventional sequential tile decoders cause severe GPU memory starvation and long I/O bottlenecks.
 
-This project developed a comprehensive compilation and benchmarking engine:
-- **TensorRT Engine Compilation**: Serializing PyTorch models via ONNX into hardware-tailored NVIDIA TensorRT execution engines.
-- **Automatic Mixed Precision (AMP)**: Analyzing FP32 vs FP16 vs INT8 quantization tradeoffs across latency, memory bandwidth, and Macro Dice segmentation accuracy.
-- **Layer & Kernel Profiling**: Identifying compute vs memory bound operators using NVIDIA Nsight Systems and PyTorch Profiler.
+This project engineered a production-grade, asynchronous Whole Slide Image processing and reconstruction engine that decouples tile acquisition, preprocessing, and spatial stitching.
 
-### Key Performance Metrics
-- **Latency**: Reduced end-to-end inference latency from **18.4 ms** down to **4.1 ms** (3.5x+ boost).
-- **Fidelity**: Maintained **99.8%** segmentation fidelity relative to FP32 baselines.
-- **Tech Stack**: NVIDIA TensorRT, ONNX Runtime, PyTorch AMP, CUDA, Docker.
+## Key Engineering Highlights
+
+- **Asynchronous Concurrent Tile Loader**: Implemented streaming batch patch generators utilizing `ThreadPoolExecutor` and memory-mapped shared arrays, eliminating disk I/O bottlenecks.
+- **Dynamic Coordinate-Space Stitching**: Automatically calculates master canvas dimensions from bounding coordinates $(x, y)$, placing multi-scale patches with precision onto NumPy/CUDA memory canvases.
+- **Multi-Stage Processing**:
+  - *Preprocessing*: High-throughput float32 normalization and channel conversion.
+  - *Core Processing*: Dual-mode (sequential & parallel) binarization, artifact isolation, and tissue contour extraction.
+  - *Post-Processing*: Morphological noise filtration (Gaussian spatial smoothing and connected-component area thresholding) with multi-color mask blending.
+- **Robust Pipeline Governance**: Centralized JSON parameter configuration (`config.json`), automated range validation (`utils.py`), and multi-level execution timing logs (`logger.py`).
+
+## Performance Impact
+
+- **Throughput**: **4.2x faster** slide assembly compared to traditional single-threaded loaders.
+- **Stability**: Flat memory footprint across 50GB+ pyramidal slides with **zero memory leaks**.
+- **Execution Modes**: Configurable sequential vs. multi-threaded parallel execution modes with automatic resource tuning.
+
+**Tech Stack**: Python, OpenSlide, ThreadPoolExecutor, NumPy, OpenCV, PyTorch, Multi-processing.

@@ -2,15 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: AI & High-Performance Computing Engineer at <a href="https://www.airamatrix.com/" target="_blank">AiraMatrix</a>
+subtitle: AI Engineer at <a href="https://www.airamatrix.com/" target="_blank">Airamatrix</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>AI &amp; HPC Engineering</p>
-    <p>Digital Pathology (WSI)</p>
+    <p>AI Engineer</p>
+    <p>Airamatrix</p>
     <p>Mumbai, India</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -27,13 +27,14 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi, I am **Tamajit Mondal**! I am an AI & High-Performance Computing (HPC) Engineer focusing on computer vision, deep learning acceleration, and large-scale digital pathology systems.
+Hi, I am **Tamajit Mondal**! I am an **AI Engineer at Airamatrix** specializing in deep learning architectures, computational pathology (Whole Slide Imaging - WSI), vision-language models (VLM), and high-throughput computer vision pipelines.
 
 My primary engineering and research focus spans:
 
-- **⚡ High-Performance Computing & GPU Acceleration**: Compiling and profiling deep neural network architectures using **NVIDIA TensorRT**, **CUDA**, and **ONNX Runtime**. Leveraging Automatic Mixed Precision (AMP FP16 & INT8) to dramatically reduce latency and boost throughput in production inference.
-- **🔬 Digital Pathology & Whole Slide Imaging (WSI)**: Designing robust, multi-processed patch loading and non-rigid tile stitching pipelines capable of handling gigapixel Whole Slide Images (50GB+ pyramidal TIFFs) without memory leaks.
-- **🧠 Unsupervised Computer Vision & Anomaly Detection**: Training deep unsupervised feature embeddings and segmentation models to isolate cellular irregularities and tissue anomalies with high Macro Dice scores.
-- **🐳 Production AI Deployment**: Building production-grade, containerized Docker microservices with GPU pinning and automated health checks.
+- **🔬 Multi-Class Histopathology Defect Segmentation**: Engineering UNet architectures with ConvNeXt backbones at $512 \times 512$ resolution to detect scanning and preparation defects, solving extreme 602:1 class imbalance using log-smoothed Focal and Dice loss to achieve a **0.8003 Validation Dice score** (+28.8% on knife lines, +38.6% on Venetian blind artifacts).
+- **⚡ High-Throughput WSI Streaming & Reconstruction**: Designing production-grade, asynchronous multithreaded tile streaming and coordinate-space stitching frameworks capable of processing **50GB+ pyramidal TIFF/SVS slides** with OpenSlide and ThreadPool parallelization, delivering 4.2x faster assembly with zero memory leaks.
+- **🤖 Vision-Language Models (VLM) & Multi-Agent Deliberation**: Fine-tuning multimodal models (**Qwen2.5-VL**) with LoRA and Chain-of-Thought (CoT) diagnostic reasoning, building a **7-agent consensus deliberation system** for automated clinical pathology review.
+- **🎯 Cellular Object Detection & Benchmark Harness**: Benchmarking modern detection backbones (Faster R-CNN, RetinaNet, RTMDet, YOLOX) using **MMDetection** on cellular tissue structures with custom interactive inspection and verification tooling.
+- **🧠 Feature Embeddings & Unsupervised Anomaly Detection**: Building patch-level representation pipelines with high-dimensional feature embeddings and k-NN anomaly scoring to detect out-of-distribution cellular irregularities.
 
-Feel free to explore my projects, check my GitHub repositories, or reach out via email for collaborations!
+Feel free to explore my [projects](/Tamhub02/projects/), view my [CV](/Tamhub02/cv/), check my GitHub repositories, or reach out via email for collaborations!
