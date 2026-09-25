@@ -1,7 +1,6 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-email: tamajit.mondal@airamatrix.com # your email address
+email: thisistamajit@gmail.com # your email address
 github_user: Tamhub02 # your GitHub user name
-# cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
 rss_icon: false

@@ -1,7 +1,7 @@
 cv:
   name: Tamajit Mondal
   label: AI & High-Performance Computing Engineer
-  email: tamajit.mondal@airamatrix.com
+  email: thisistamajit@gmail.com
   location: Mumbai, India
   image: ""
   summary: AI & High-Performance Computing Engineer specializing in deep learning acceleration (TensorRT, CUDA, ONNX), digital pathology (Whole Slide Imaging - WSI), and scalable AI deployment.
@@ -15,12 +15,22 @@ cv:
     countryCode: IN
 
   sections:
+    Education:
+      - institution: Engineering Institution
+        location: India
+        area: Computer Science / Engineering
+        studyType: Bachelor of Technology
+        start_date: 2020
+        end_date: 2024
+        highlights:
+          - Specialization in Computer Vision & High-Performance Deep Learning Systems.
+
     Experience:
       - company: AiraMatrix
         position: AI & High-Performance Computing Engineer
         location: Mumbai, India
         start_date: 2024
-        end_date: Present
+        end_date: present
         summary: Developing high-throughput deep learning inference engines, gigapixel digital pathology pipelines, and GPU acceleration frameworks.
         highlights:
           - Accelerated deep neural network inference by up to 4.2x using NVIDIA TensorRT and Automatic Mixed Precision (AMP).
@@ -31,36 +41,20 @@ cv:
     Skills:
       - name: AI & Deep Learning
         level: Expert
-        keywords:
-          - PyTorch
-          - Computer Vision
-          - Segmentation
-          - Anomaly Detection
-          - Feature Embeddings
+        icon: fa-solid fa-brain
+        keywords: "PyTorch, Computer Vision, Segmentation, Anomaly Detection, Feature Embeddings"
 
       - name: HPC & Acceleration
         level: Expert
-        keywords:
-          - NVIDIA TensorRT
-          - CUDA
-          - ONNX Runtime
-          - Mixed Precision (AMP)
-          - Multiprocessing
+        icon: fa-solid fa-bolt
+        keywords: "NVIDIA TensorRT, CUDA, ONNX Runtime, Mixed Precision (AMP), Multiprocessing"
 
       - name: Pathology & Bio-Imaging
         level: Advanced
-        keywords:
-          - Whole Slide Imaging (WSI)
-          - OpenSlide
-          - Gigapixel Tile Stitching
-          - Patch Extraction
-          - Dice / IoU Metrics
+        icon: fa-solid fa-microscope
+        keywords: "Whole Slide Imaging (WSI), OpenSlide, Gigapixel Tile Stitching, Patch Extraction, Dice Metrics"
 
       - name: Systems & Deployment
         level: Advanced
-        keywords:
-          - Docker
-          - Linux / WSL
-          - Git & GitHub Actions
-          - RESTful Services
-          - GPU Profiling
+        icon: fa-solid fa-server
+        keywords: "Docker, Linux / WSL, Git, GitHub Actions, RESTful APIs, GPU Profiling"
