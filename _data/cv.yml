@@ -4,7 +4,7 @@ cv:
   email: thisistamajit@gmail.com
   location: Mumbai, India
   image: ""
-  summary: AI Engineer at Airamatrix specializing in deep learning architectures, computational pathology (Whole Slide Imaging - WSI), vision-language models (VLM), and high-throughput computer vision pipelines.
+  summary: AI Engineer at Airamatrix working on computer vision and deep learning systems for digital pathology, including Whole Slide Image (WSI) processing, defect segmentation, and vision-language models.
 
   social_networks:
     - network: GitHub
@@ -30,26 +30,26 @@ cv:
         position: AI Engineer
         location: Mumbai, India
         start_date: 2024
-        summary: Designing deep learning architectures, Whole Slide Image (WSI) processing engines, vision-language models (VLM), and high-throughput computer vision pipelines for computational pathology.
+        summary: Developing deep learning models and high-throughput computer vision pipelines for computational pathology.
         highlights:
-          - "Multi-Class Histopathology Defect Segmentation: Engineered a ConvNeXt-Tiny + UNet pipeline at 512x512 resolution for gigapixel slides, addressing severe 602:1 class imbalance using log-smoothed class-weighted Focal Loss (gamma=2.0) and Dice Loss; attained 0.8003 Validation Dice score (+28.8% on knife lines, +38.6% on Venetian blind artifacts)."
-          - "High-Throughput WSI Streaming & Reconstruction: Architected an end-to-end multithreaded tile streaming and stitching framework supporting 50GB+ pyramidal TIFF/SVS slides with OpenSlide and ThreadPool parallelization, reducing reconstruction latency by 4.2x with zero memory leaks."
-          - "Medical Vision-Language Model (VLM) & Multi-Agent Consensus: Fine-tuned multimodal architectures (Qwen2.5-VL) using LoRA, Chain-of-Thought (CoT) diagnostic reasoning, and multi-task learning; established a 7-agent sequential deliberation and consensus scoring pipeline for automated clinical assessment."
-          - "Pathology Object Detection & Benchmarking: Evaluated and benchmarked modern detection backbones (Faster R-CNN, RetinaNet, RTMDet, YOLOX) using MMDetection on cellular tissue structures, deploying custom interactive COCO/YOLO inspection and bbox quality verification utilities."
-          - "Unsupervised Anomaly Detection & Embedding Extraction: Built patch-level feature extraction pipelines with high-dimensional embedding mapping and k-NN anomaly scoring to detect out-of-distribution cellular irregularities."
+          - "Built a ConvNeXt-Tiny and UNet segmentation pipeline for whole slide images, addressing severe 602:1 class imbalance using log-smoothed Focal and Dice loss to achieve a 0.8003 Validation Dice score."
+          - "Developed an asynchronous multithreaded tile streaming and stitching pipeline for 50GB+ pyramidal TIFF/SVS slides with OpenSlide, reducing reconstruction latency by 4.2x with zero memory leaks."
+          - "Fine-tuned Qwen2.5-VL models using LoRA and Chain-of-Thought reasoning for histopathology tasks, implementing a multi-agent consensus system for diagnostic agreement."
+          - "Benchmarked Faster R-CNN, RetinaNet, RTMDet, and YOLOX on cellular structures using MMDetection, building custom visual inspection tools for bounding box validation."
+          - "Implemented patch-level feature extraction and k-NN anomaly scoring pipelines to identify out-of-distribution tissue regions."
 
     Skills:
       - name: Computer Vision & Deep Learning
         level: Expert
         icon: fa-solid fa-brain
-        keywords: "PyTorch, ConvNeXt, UNet, Multi-Class Segmentation, Object Detection, Anomaly Detection, Vision-Language Models (VLM), LoRA, CoT Reasoning"
+        keywords: "PyTorch, ConvNeXt, UNet, Segmentation, Object Detection, Anomaly Detection, Vision-Language Models (VLM), LoRA"
 
       - name: Computational Pathology & Imaging
         level: Expert
         icon: fa-solid fa-microscope
-        keywords: "Whole Slide Imaging (WSI), OpenSlide, Pyramidal TIFF/SVS, Tile Streaming, Spatial Stitching, Morphological Filtering, Dice / IoU Metrics"
+        keywords: "Whole Slide Imaging (WSI), OpenSlide, Pyramidal TIFF/SVS, Tile Streaming, Spatial Stitching, Morphological Filtering, Dice Metrics"
 
-      - name: Detection & Specialized Toolkits
+      - name: Detection & Toolkits
         level: Advanced
         icon: fa-solid fa-crosshairs
         keywords: "MMDetection, Faster R-CNN, RetinaNet, RTMDet, YOLOX, OpenCV, Albumentations, Scikit-learn, NumPy"
@@ -57,4 +57,4 @@ cv:
       - name: Systems & Deployment
         level: Advanced
         icon: fa-solid fa-server
-        keywords: "Docker, Linux / WSL, Multithreading (ThreadPoolExecutor), Git, GitHub Actions, CUDA, RESTful APIs, GPU Profiling"
+        keywords: "Docker, Linux / WSL, Multithreading, Git, GitHub Actions, CUDA, REST APIs"

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: High-Throughput WSI Streaming & Reconstruction Engine
-description: Asynchronous multi-threaded gigapixel tile loader, coordinate mapping, and non-rigid stitcher processing 50GB+ pyramidal TIFF/SVS slides
+title: WSI Tile Streaming and Reconstruction
+description: Multithreaded tile streaming, coordinate mapping, and canvas stitching for 50GB+ pyramidal slides
 img: assets/img/12.jpg
 importance: 2
 category: work
@@ -10,24 +10,18 @@ related_publications: false
 
 ## Overview
 
-Whole Slide Images (WSIs) in digital pathology frequently exceed **50 gigabytes** per pyramidal TIFF or Aperio SVS file, with gigapixel canvases comprising billions of pixels. Conventional sequential tile decoders cause severe GPU memory starvation and long I/O bottlenecks.
+Whole Slide Images (WSIs) often exceed 50GB per pyramidal TIFF or SVS file. Processing gigapixel canvases requires streaming patches efficiently without exhausting host memory or stalling GPU queues.
 
-This project engineered a production-grade, asynchronous Whole Slide Image processing and reconstruction engine that decouples tile acquisition, preprocessing, and spatial stitching.
+## Approach
 
-## Key Engineering Highlights
+- **Concurrent Tile Loading**: Built streaming batch generators using `ThreadPoolExecutor` and OpenSlide, decoupling disk I/O from preprocessing.
+- **Coordinate-Space Stitching**: Automatically calculates canvas geometry from tile coordinates $(x, y)$ and places patches into memory-mapped arrays.
+- **Processing Pipeline**: Standardized preprocessing (normalization), threshold-based artifact masking, and morphological post-processing.
+- **Config-Driven**: Handled paths, tile dimensions, batch sizes, and execution modes (sequential vs. parallel) through a unified config schema.
 
-- **Asynchronous Concurrent Tile Loader**: Implemented streaming batch patch generators utilizing `ThreadPoolExecutor` and memory-mapped shared arrays, eliminating disk I/O bottlenecks.
-- **Dynamic Coordinate-Space Stitching**: Automatically calculates master canvas dimensions from bounding coordinates $(x, y)$, placing multi-scale patches with precision onto NumPy/CUDA memory canvases.
-- **Multi-Stage Processing**:
-  - *Preprocessing*: High-throughput float32 normalization and channel conversion.
-  - *Core Processing*: Dual-mode (sequential & parallel) binarization, artifact isolation, and tissue contour extraction.
-  - *Post-Processing*: Morphological noise filtration (Gaussian spatial smoothing and connected-component area thresholding) with multi-color mask blending.
-- **Robust Pipeline Governance**: Centralized JSON parameter configuration (`config.json`), automated range validation (`utils.py`), and multi-level execution timing logs (`logger.py`).
+## Results
 
-## Performance Impact
+- Reduced slide reconstruction time by **4.2x** compared to single-threaded loading.
+- Maintained a bounded memory footprint across 50GB+ slides with zero memory leaks.
 
-- **Throughput**: **4.2x faster** slide assembly compared to traditional single-threaded loaders.
-- **Stability**: Flat memory footprint across 50GB+ pyramidal slides with **zero memory leaks**.
-- **Execution Modes**: Configurable sequential vs. multi-threaded parallel execution modes with automatic resource tuning.
-
-**Tech Stack**: Python, OpenSlide, ThreadPoolExecutor, NumPy, OpenCV, PyTorch, Multi-processing.
+**Stack**: Python, OpenSlide, ThreadPoolExecutor, NumPy, OpenCV.

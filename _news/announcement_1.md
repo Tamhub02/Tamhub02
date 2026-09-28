@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Achieved **0.8003 Validation Dice score** on multi-class histopathology defect segmentation using ConvNeXt-Tiny + UNet with Log-Smoothed Focal-Dice loss!
+Validation Dice score of 0.8003 achieved on histopathology defect segmentation using ConvNeXt-Tiny and UNet.
